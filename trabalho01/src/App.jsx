@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import Cadastro from "./components/Cadastro";
+import Carro from './components/Carro'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Cadastro/>
+      <Carro/>
     </>
   )
 }

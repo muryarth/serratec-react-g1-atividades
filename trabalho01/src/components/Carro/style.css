@@ -1,0 +1,17 @@
+div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 25px;
+    color: rgb(46, 12, 12);
+}
+
+.containerGeral{
+    background-color: silver;
+    border-radius: 20px;
+    border: solid rgb(46, 12, 12);
+    width: 400px;
+    height: 400px;
+}
