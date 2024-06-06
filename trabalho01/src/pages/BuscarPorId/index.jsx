@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 function BuscarPorId() {
@@ -9,16 +9,23 @@ function BuscarPorId() {
 
   const buscarPessoa = (evento, id) => {
     evento.preventDefault();
-    axios
-      .get(`https://665fa6dd5425580055b059a6.mockapi.io/usuario/${id}`)
-      .then((resposta) => {
-        setErro(false);
-        setPessoa(resposta.data);
-      })
-      .catch((erro) => {
-        console.log(erro);
-        setErro(true);
-      });
+
+    if (id > 0) {
+      axios
+        .get(`https://665fa6dd5425580055b059a6.mockapi.io/usuario/${id}`)
+        .then((resposta) => {
+          setErro(false);
+          setPessoa(resposta.data);
+        })
+        .catch((erro) => {
+          console.log(erro);
+          setErro(true);
+          setPessoa({});
+        });
+    } else {
+      setErro(false);
+      setPessoa({})
+    }
   };
 
   return (
@@ -26,16 +33,21 @@ function BuscarPorId() {
       <form action="submit">
         <input
           type="text"
+          className="form-control"
           placeholder="Informe o ID do usuário"
           onChange={(evento) => {
             texto = evento.target.value;
             console.log(evento.target.value);
           }}
         />
-        <button onClick={(evento) => buscarPessoa(evento, texto)}>
+        <button
+          className="btn btn-primary mt-2"
+          onClick={(evento) => buscarPessoa(evento, texto)}
+        >
           Buscar
         </button>
       </form>
+
       {!erro ? (
         Object.keys(pessoa).length > 0 && (
           <ul>
@@ -48,6 +60,7 @@ function BuscarPorId() {
       ) : (
         <p>Não existe nenhum usuário cadastrado com esse ID</p>
       )}
+      
     </div>
   );
 }
