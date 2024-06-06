@@ -1,14 +1,12 @@
-import { useState } from 'react'
-import Carro from './components/Carro'
+import Cadastro from "./components/Cadastro";
+// import Carro from "./components/Carro";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <Carro/>
+      <Cadastro />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
