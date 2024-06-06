@@ -6,7 +6,7 @@ function Header() {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link className="nav-link" to={"/"}>
+          <Link className="nav-link" to={"/exercicio1"}>
             Exercício 1
           </Link>
         </li>

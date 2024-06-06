@@ -28,7 +28,7 @@ function ListaPessoas() {
               <li
                 style={{
                   backgroundColor:
-                    index % 2 == 0 ? "none" : "rgb(163 195 227)",
+                    index % 2 == 0 ? "none" : "#cfe2ff",
                 }}
                 className="list-item"
                 key={usuario.id}
