@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import Carro from './components/Carro'
+import { useState } from "react";
+import BuscarPorId from "./components/BuscarPorId/BuscarPorId";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <Carro/>
+      <BuscarPorId />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
