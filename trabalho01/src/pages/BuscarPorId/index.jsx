@@ -30,7 +30,7 @@ function BuscarPorId() {
 
   return (
     <div>
-      <form action="submit">
+      <form action="submit" className="d-flex flex-column">
         <input
           type="text"
           className="form-control"
