@@ -1,6 +1,26 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";''
+import axios from 'axios';
 
 function Formulario({ mostrarPessoas, setMostrarPessoas }) {
+  const [dadosUsuario, setDadosUsuario] = useState({});
+  // const [enviado, setEnviado] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const requestBody = { ...dadosUsuario, dataCriacao: new Date() };
+
+    console.log(requestBody);
+
+    axios
+      .post("https://665fa6dd5425580055b059a6.mockapi.io/usuario", requestBody)
+      .then((response) => console.log(response.data))
+      .catch(() => console.error("Requisição com problemas..."));
+
+    // setEnviado(true);
+  };
+
   return (
     <form>
       <div className="mb-3">
@@ -12,6 +32,9 @@ function Formulario({ mostrarPessoas, setMostrarPessoas }) {
           className="form-control"
           id="nome"
           placeholder="Informe o nome..."
+          onChange={(e) =>
+            setDadosUsuario({ ...dadosUsuario, nome: e.target.value })
+          }
         />
       </div>
 
@@ -24,6 +47,9 @@ function Formulario({ mostrarPessoas, setMostrarPessoas }) {
           className="form-control"
           id="cpf"
           placeholder="Informe o CPF..."
+          onChange={(e) =>
+            setDadosUsuario({ ...dadosUsuario, cpf: e.target.value })
+          }
         />
       </div>
 
@@ -36,6 +62,9 @@ function Formulario({ mostrarPessoas, setMostrarPessoas }) {
           className="form-control"
           id="email"
           placeholder="Informe o Email..."
+          onChange={(e) =>
+            setDadosUsuario({ ...dadosUsuario, email: e.target.value })
+          }
         />
       </div>
 
@@ -51,7 +80,11 @@ function Formulario({ mostrarPessoas, setMostrarPessoas }) {
           Listar Usuários
         </button>
 
-        <button type="submit" className="btn btn-primary">
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={(e) => handleSubmit(e)}
+        >
           Cadastrar
         </button>
       </div>
