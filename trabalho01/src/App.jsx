@@ -1,13 +1,12 @@
 import { useState } from "react";
-import BuscarPorId from "./components/BuscarPorId/BuscarPorId";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./routes";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <BuscarPorId />
-    </>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 }
 
