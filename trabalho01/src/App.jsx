@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState } from "react";
 import BuscarPorId from "./components/BuscarPorId/BuscarPorId";
 
@@ -8,15 +7,6 @@ function App() {
   return (
     <>
       <BuscarPorId />
-=======
-import Cadastro from "./components/Cadastro";
-// import Carro from "./components/Carro";
-
-function App() {
-  return (
-    <>
-      <Cadastro />
->>>>>>> 53dacb23f1402d8a83645a51b0d3850b7ec26995
     </>
   );
 }
