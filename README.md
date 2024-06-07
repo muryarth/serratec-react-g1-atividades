@@ -1,1 +1,1 @@
-# serratec-react-g1-atividades
+# Serratec: Atividades do Grupo 2
